@@ -28,12 +28,13 @@
     var div,
         container = document.getElementById('container')
 
-    for (var i=0; i<5; i++) {
+    for (var i=0; i<5; i++) {  //大括弧無法隔開 var變數的作用域(因為var的宣告是 function級別)
       div = document.createElement('div')
       div.onclick = function() {
         alert('This is box #' + i)
       }
-      container.appendChild(div)
+      container.appendChild(div)//將Div加入container
+
     }
 
 </script>
