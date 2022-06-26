@@ -14,11 +14,19 @@
     <p>Open the console</p>
     <script type="text/babel">
       const insideFn = logger =>
+              //與 06-functional.html 不同的是 message是在裡面呼叫的
         logger(
           "They can be sent to other functions as arguments"
         );
 
-      insideFn(message => console.log(message));
+
+      const loggerFun= message => console.log(message);
+      insideFn(loggerFun);
+
+      //function 當 arg 傳遞
+      //等同於 logger = message => console.log(message);
+      //      logger('xxx');
+
     </script>
   </body>
 </html>

@@ -14,20 +14,29 @@
     <p>Open the console</p>
     <script type="text/babel">
       const createScream = function(logger) {
-        return function(message) {
-          logger(message.toUpperCase() + "!!!");
-        };
-      };
 
-      const scream = createScream(message =>
-        console.log(message)
-      );
+                                              return (msg,err)=> {
+                                                let msg1=`Message:${msg.toUpperCase()}!!!` ;
+                                                let err1=`ErrorMsg: ${err}???`;
+
+                                                  logger(msg1 ,err1);
+                                              };
+                                            };
+
+      const scream = createScream(
+                                    (message,err) => {
+                                                      console.log(message);
+                                                      console.warn(err);
+                                                      }
+                                  );
 
       scream(
-        "functions can be returned from other functions"
-      );
+        "functions can be returned from other functions","new err"
+      );//直接執行 createScream 回傳的 function
       scream("createScream returns a function");
       scream("scream invokes that returned function");
+
+      //return 一個funcitron
     </script>
   </body>
 </html>

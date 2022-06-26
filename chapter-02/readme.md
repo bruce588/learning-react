@@ -1,6 +1,8 @@
 # Chapter 2 : Emerging JavaScript
 
-If you haven't made the switch to the latest JavaScript syntax yet, now is a good time to get started.
+If you haven't made the switch to the latest JavaScript syntax yet, now is a good time to get started.  
+如果您還沒有切換到最新的 JavaScript 語法，那麼現在是開始的好時機。
+
 
 ## Samples
 
