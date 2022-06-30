@@ -10,7 +10,7 @@ module.exports = {
 
   output: {
     path: path.resolve("build-server"),
-    filename: "index.js"
+    filename: "index-jsx-js.js"
   },
 
   module: {

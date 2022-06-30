@@ -18,12 +18,25 @@
     class IngredientsList extends React.Component {
         render() {
           return React.createElement("ul", {className: "ingredients"},
-              this.props.items.map((ingredient, i) =>
+              this.props.items.map((ingredient, i) => //讀取 props 內的屬性
                   React.createElement("li", { key: i }, ingredient)
               )
           )
         }
     }
+
+    function IngredientsList2(props) {
+
+          const propTitle =  props.title;
+          console.log(propTitle);//外面傳進來的屬性
+            return React.createElement("ul", {className: "ingredients"},
+                props.items.map((ingredient, i) => //讀取 props 內的屬性
+                    React.createElement("li", { key: i }, ingredient)
+                )
+            )
+
+    }
+
 
     const items = [
       "1 lb Salmon",
@@ -33,9 +46,10 @@
       "1/2 cup Olive Oil",
       "3 cloves of Garlic"
     ]
+    const title ="Bruce Add Title";
 
     ReactDOM.render(
-        React.createElement(IngredientsList, {items}, null),
+        React.createElement(IngredientsList2, {items,title}, null),
         document.getElementById('react-container')
     )
 
