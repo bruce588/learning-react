@@ -17,18 +17,18 @@ const SecondElement = ({list})=>{
 
 //使用React一定要用解構的方式取得參數,因為從上層傳來的屬性可能是多個
 //const RootElement = (myProp)=> { //沒有加大括弧會造成取得標題會這 myProp.data.title
-const RootElement = ({data})=> {
-console.log('data',data);
+const RootElement = ({title,list})=> {
+console.log('data',list);
     return (<>
 
-        <div>Title:{data.title}</div>
-        <SecondElement list={data.list}></SecondElement>
+        <div>Title:{title}</div>
+        <SecondElement list={list}></SecondElement>
     </>);
 };
 
 
 
 ReactDOM.render(
-    <RootElement data={data}></RootElement>,
+    <RootElement {...data}></RootElement>,
     document.getElementById("react-container")
 );

@@ -17,7 +17,7 @@ app.get("/*", (req, res) => {
   );
 
   const indexFile = path.resolve(
-    "./build/index.html"
+    "./build/my-lab2-index.html"
   );
 
   fs.readFile(indexFile, "utf8", (err, data) => {
