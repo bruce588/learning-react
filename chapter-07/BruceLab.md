@@ -49,6 +49,7 @@ export default function App2() {
 ## 改用useMemo改善效能議題
 * useMemo 第一個參數是function第一次被載入時執行
 * 第二個引數如同useEffect
+* useCallback(fn,kdeps)  等同於 useMemo(()=>fn,deps)
 ```js script
 import React, { useState, useEffect, useMemo } from "react";
 
