@@ -1,4 +1,7 @@
 ### 練習範例
+
+* useEffect使用不當,當心成為效能殺手
+
 ```js script
 
 import React, { useState, useEffect } from "react";
@@ -43,3 +46,41 @@ export default function App2() {
 
 
 ```
+# 改用useMemo改善效能議題
+```js script
+import React, { useState, useEffect, useMemo } from "react";
+
+const useAnyKeyToRender = () => {
+  const [, forceRender] = useState();
+
+  useEffect(() => {
+    window.addEventListener("keydown", forceRender);
+    return () => window.removeEventListener("keydown", forceRender);
+  }, []);
+};
+
+function WordCount({ children = "" }) {
+  useAnyKeyToRender();
+
+  const words = useMemo(() => children.split(" "), []);
+  //造成主控台狂輸出....先喝杯水壓壓驚...
+  useEffect(() => {
+    console.log("fresh render2");
+  }, [words]);
+
+  return (
+    <>
+      <p>{children}</p>
+      <p>
+        <strong>{children.length}</strong>
+      </p>
+    </>
+  );
+}
+
+export default function App2() {
+  return <WordCount>a b c d e f g</WordCount>;
+}
+
+```
+
