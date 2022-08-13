@@ -87,3 +87,13 @@ export default function App2() {
 
 ```
 
+
+## 其他備註
+* useState 簡單設定狀態
+* useReducer 用複雜的方式設定狀態
+* useEffect
+* 改善useEffect效能問題
+  * useMemo (紀錄非fn物件)
+  * useCallback (紀錄fn)
+
+
