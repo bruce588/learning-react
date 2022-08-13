@@ -95,5 +95,6 @@ export default function App2() {
 * 改善useEffect效能問題
   * useMemo (紀錄非fn物件)
   * useCallback (紀錄fn)
+* 使用memo創造純函式元件
 
 
