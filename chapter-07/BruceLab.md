@@ -1,4 +1,4 @@
-### 練習範例
+# 練習範例
 
 * useEffect使用不當,當心成為效能殺手
 
@@ -46,7 +46,9 @@ export default function App2() {
 
 
 ```
-# 改用useMemo改善效能議題
+## 改用useMemo改善效能議題
+* useMemo 第一個參數是function第一次被載入時執行
+* 第二個引數如同useEffect
 ```js script
 import React, { useState, useEffect, useMemo } from "react";
 
